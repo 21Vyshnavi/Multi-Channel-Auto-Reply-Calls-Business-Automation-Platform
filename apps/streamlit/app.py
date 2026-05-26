@@ -282,8 +282,7 @@ with st.sidebar:
     st.header("Settings")
     default_api = os.environ.get("API_BASE_URL")
     if not default_api:
-        hostport = os.environ.get("API_HOSTPORT")
-        default_api = f"http://{hostport}" if hostport else "http://127.0.0.1:8080"
+        default_api = "http://127.0.0.1:8080"
     api_base = st.text_input("API base URL", value=default_api).rstrip("/")
     st.caption(f"API: `{api_base}`")
     auto_refresh = st.toggle("Auto-refresh", value=True)

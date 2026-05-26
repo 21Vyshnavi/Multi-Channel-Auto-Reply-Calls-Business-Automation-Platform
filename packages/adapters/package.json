@@ -1,0 +1,17 @@
+{
+  "name": "@mcabap/adapters",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@mcabap/core": "file:../core"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}

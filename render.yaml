@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: mcabap-api
+    env: node
+    plan: free
+    rootDir: apps/api
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+
+  - type: web
+    name: mcabap-streamlit
+    env: python
+    plan: free
+    rootDir: .
+    buildCommand: pip install -r apps/streamlit/requirements.txt
+    startCommand: streamlit run apps/streamlit/app.py --server.port $PORT --server.address 0.0.0.0
+    envVars:
+      - key: API_HOSTPORT
+        fromService:
+          name: mcabap-api
+          type: web
+          property: hostport

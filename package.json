@@ -1,0 +1,14 @@
+{
+  "name": "multi-channel-auto-reply-platform",
+  "private": true,
+  "scripts": {
+    "install:all": "npm --prefix packages/core install && npm --prefix packages/adapters install && npm --prefix apps/api install && npm --prefix apps/dashboard install",
+    "dev:api": "npm --prefix apps/api run dev",
+    "dev:dashboard": "npm --prefix apps/dashboard run dev",
+    "typecheck": "npm --prefix packages/core run typecheck && npm --prefix packages/adapters run typecheck && npm --prefix apps/api run typecheck && npm --prefix apps/dashboard run typecheck",
+    "build": "npm --prefix packages/core run build && npm --prefix packages/adapters run build && npm --prefix apps/api run build && npm --prefix apps/dashboard run build"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}
